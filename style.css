@@ -1,0 +1,18 @@
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.sound-button {
+    /* lasam pe 80px, TODO: facem emoji-ul mai mare si textul daca e prea lung da wrap si merge pe a doua linie */
+    height: 80px;
+    margin: 10px;
+}
+#navbar-container{
+    background-color: #CCF;
+    border-radius: 10px;
+    margin:10px;
+}
