@@ -8,6 +8,59 @@ window.onload = () => {
             sounds.push(data[i]);
         }
         
+        //#region upload logic
+        
+        //opening the file exlorer
+        const uploadbtn = document.querySelector('#sound-picker')
+        const uploadBtnName = document.getElementById('sound-picker-name');
+        uploadbtn.addEventListener('click',()=>{
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.onchange = e => { 
+                let file = e.target.files[0]; 
+                uploadBtnName.innerText = `File: ${file.name}`
+
+                let reader = new FileReader();
+                reader.addEventListener('load', function(e) {
+                // audio.src = e.target.result;  //Might be useless: to be deleted later
+                // audio.play();
+                console.log("uploaded")
+                });
+                reader.readAsDataURL(file);
+             }
+            input.click();
+        })
+
+        //saving the sound into the sound list
+        const saveNewSoundBtn = document.getElementById('save-new-sound');
+        const newSoundName = document.getElementById('inputSoundName');
+        const newSoundEmoji = document.getElementById('inputSoundEmoji');
+        
+        
+        saveNewSoundBtn.addEventListener('click',()=>{
+
+        })
+
+        // text matching logic
+        const soundNameBoxRegex = RegExp('^[A-Za-z0-9-\ ]');
+        const inputSoundNameBox = document.getElementById('inputSoundName');
+        inputSoundNameBox.addEventListener('keydown', (event) => {
+            if(event.ctrlKey || event.altKey || typeof event.key !== 'string' || event.key.length !== 1)
+                    return;
+            if(!soundNameBoxRegex.test(event.key))
+                event.preventDefault();
+        });
+        
+        const soundEmojiBoxRegex = RegExp('/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g');
+        const inputEmojiBox = document.getElementById('inputSoundEmoji');
+        inputEmojiBox.addEventListener('keydown', (event) => {
+            if(event.ctrlKey || event.altKey || typeof event.key !== 'string' || event.key.length !== 1)
+                    return;
+            if(!soundEmojiBoxRegex.test(event.key) || inputEmojiBox.value.length != 1)
+                event.preventDefault();
+        })
+        //#endregion
+
         //#region generate buttons
         let totalSounds = sounds.length;
         const soundBar = document.querySelector('#sound-bar');
