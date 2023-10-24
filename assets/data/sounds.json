@@ -1,5 +1,12 @@
 [
-      {"name":"Airhorn", "emoji":"📯"},
-      {"name":"Drum", "emoji":"🥁"},
-      {"name":"Quack", "emoji":"🦆"}
+      {"name":"Airhorn", "emoji":"📯", "fp":"."},
+      {"name":"Drum", "emoji":"🥁", "fp":"."},
+      {"name":"Quack", "emoji":"🦆", "fp":"."},
+      {"name":"Clap", "emoji":"👏", "fp":"."},
+      {"name":"Cricket", "emoji": "🦗", "fp":"."},
+      {"name":"Fart", "emoji":"💨", "fp":"."},
+      {"name":"Thud", "emoji":"🗿", "fp":"."},
+      {"name":"Bruh", "emoji":"😐", "fp":"."},
+      {"name":"Amogus", "emoji":"📮", "fp":"."},
+      {"name":"Airhorn", "emoji":"🔊", "fp":"."}
 ]

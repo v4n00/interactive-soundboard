@@ -28,13 +28,44 @@ window.onload = () => {
     const saveNewSoundBtn = document.getElementById('save-new-sound');
     const newSoundName = document.getElementById('inputSoundName');
     const newSoundEmoji = document.getElementById('inputSoundEmoji');
-    
+
+    function download(content, fileName, contentType) {
+        var a = document.createElement("a");
+        var file = new Blob([JSON.stringify(content, null, 2)], {type: contentType});
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+    }
     
     saveNewSoundBtn.addEventListener('click',()=>{
-        
+        let newSound = {
+            "name":newSoundName.value,
+             "emoji":newSoundEmoji.value
+        };
+        sounds.push(newSound);
+        let btn = document.createElement('div');
+        btn.classList = 'btn btn-primary col-2 sound-button';
+        btn.setAttribute('type', 'button');
+
+        let emoji = document.createElement('div');
+        emoji.classList = 'emoji';
+        emoji.textContent = `${sounds[sounds.length-1].emoji}`;
+        btn.appendChild(emoji);
+
+        let text = document.createElement('div');
+        text.classList = 'text';
+        text.textContent = `${sounds[sounds.length-1].name}`;
+        btn.appendChild(text);
+
+        soundBar.appendChild(btn)
     })
     
-    // text matching logic
+    const saveSounds = document.getElementById('save-button')
+    saveSounds.addEventListener('click', ()=>{
+        download(sounds, 'json.json', "application/json");
+    })
+    
+    //#region text matching logic
     const soundNameBoxRegex = RegExp('^[A-Za-z0-9-\ ]');
     const inputSoundNameBox = document.getElementById('inputSoundName');
     inputSoundNameBox.addEventListener('keydown', (event) => {
@@ -58,12 +89,20 @@ window.onload = () => {
     let totalSounds = sounds.length;
     const soundBar = document.querySelector('#sound-bar');
     for(let i = 0; i < totalSounds; i++) {
-        let btn = document.createElement('button');
-        
-        //<button type="button" class="btn btn-primary col-2" style="height:100px; margin: 10px;" id="funny-button"></button>
-        btn.classList = 'btn btn-primary col-2 sound-button';
+        let btn = document.createElement('div');
+        btn.classList = 'btn btn-primary col-sm-3 col-md-3 col-lg-2 col-xl-2 col-4 sound-button';
         btn.setAttribute('type', 'button');
-        btn.textContent = `${sounds[i].emoji} ${sounds[i].name}`;
+
+        let emoji = document.createElement('div');
+        emoji.classList = 'emoji';
+        emoji.textContent = `${sounds[i].emoji}`;
+        btn.appendChild(emoji);
+
+        let text = document.createElement('div');
+        text.classList = 'text d-none d-sm-block';
+        text.textContent = `${sounds[i].name}`;
+        btn.appendChild(text);
+
         btn.addEventListener('click', () => {
             //TODO: add sound
             alert(`button ${i+1} clicked`);

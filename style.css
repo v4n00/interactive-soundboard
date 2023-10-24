@@ -6,13 +6,56 @@
     font-size: 40px;
     font-weight: bold;
 }
-.sound-button {
-    /* lasam pe 80px, TODO: facem emoji-ul mai mare si textul daca e prea lung da wrap si merge pe a doua linie */
-    height: 80px;
-    margin: 10px;
+
+.light-theme {
+    background-color: whitesmoke;
 }
+
+.dark-theme {
+    background-color: #03001C;
+}
+
+#search-input {
+    margin: 5px !important;
+}
+
+#save-button {
+    margin:5px !important;
+}
+
+#upload-button {
+    margin:5px !important;
+}
+
+#random-button {
+    margin:5px !important;
+}
+
 #navbar-container{
     background-color: #CCF;
     border-radius: 10px;
     margin:10px;
+}
+
+.sound-button {
+    height: 60px;
+    margin: 10px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#sound-bar{
+    width: 112vw !important;
+}
+
+.emoji {
+    width:30px;
+    height:30px;
+    font-size: 30px;
+    margin:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
