@@ -7,6 +7,14 @@
     font-weight: bold;
 }
 
+.navbar {
+    background-color: black;
+}
+
+#sound-picker {
+    margin-top: 10px;
+}
+
 .light-theme {
     background-color: whitesmoke;
 }
@@ -46,8 +54,10 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-#sound-bar{
-    width: 112vw !important;
+
+#sound-bar {
+    display: flex;
+    justify-content: center;
 }
 
 .emoji {

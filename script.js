@@ -62,7 +62,7 @@ window.onload = () => {
     
     const saveSounds = document.getElementById('save-button')
     saveSounds.addEventListener('click', ()=>{
-        download(sounds, 'json.json', "application/json");
+        download(sounds, 'sounds.json', "application/json");
     })
     
     //#region text matching logic
@@ -104,7 +104,7 @@ window.onload = () => {
         btn.appendChild(text);
 
         btn.addEventListener('click', () => {
-            //TODO: add sound
+            //TODO: add sound API
             alert(`button ${i+1} clicked`);
         })
         
@@ -138,6 +138,25 @@ window.onload = () => {
             else
             item.style.display = 'none';
         })
+    });
+    //#endregion
+
+    //#region theme button
+    const themeBtn = document.getElementById('theme-button');
+    const navbar = document.getElementById('navbar');
+
+    let darkTheme = false;
+    themeBtn.addEventListener('click', e => {
+        if(!darkTheme) {
+            document.body.classList = 'dark-theme';
+            navbar.classList = 'navbar navbar-expand-lg dark-theme';
+            darkTheme = !darkTheme;
+        }
+        else {
+            document.body.classList = 'light-theme';
+            navbar.classList = 'navbar navbar-expand-lg light-theme';
+            darkTheme = !darkTheme;
+        }
     });
     //#endregion
 }
