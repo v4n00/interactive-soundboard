@@ -5,12 +5,12 @@
 - Use **Visual Studio Code & Live Server** to make development easier.  
 - The projects must contain at least 2 of the following APIs:
     - **Canvas (mandatory)**
-    - **Audio API**
+    - Audio API
     - Speech API
     - Video API
     - MIDI API
     - Geolocation API
-    - **Drag & Drop API**
+    - Drag & Drop API
 - **Adding Bootstrap to your project is mandatory**
 - You are **not allowed** to use any external libraries apart from [Bootstrap](https://getbootstrap.com/), [jQuery](https://jquery.com/) and [Leaflet](https://leafletjs.com/) (for projects involving a map)
 - **The deadline to upload the projects is January 5th 2024, 23:59**
