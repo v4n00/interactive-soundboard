@@ -42,9 +42,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
-        <button class="btn btn-danger custom-button" id="upload-button" data-bs-toggle="modal"
-        data-bs-target="#upload-modal">Upload</button>
-        <button class="btn btn-warning custom-button" id="save-button">Save Sounds</button>
         <button class="btn btn-primary custom-button" id="random-button">Random</button>
         <button class="btn btn-secondary custom-button" id="theme-button">Change Theme</button>
       </ul>
@@ -69,48 +66,7 @@
 </div>
 
 <canvas id="canvas"></canvas>
-
 <div id="emojiContainer"></div>
 
-
-<!-- Modals -->
-<div class="modal fade" id="upload-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Upload sound</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row">
-            <form>
-              <div class="form-group">
-                <label for="inputSoundName">Sound name</label>
-                <input type="text" class="form-control" id="inputSoundName">
-              </div>
-              <div class="form-group">
-                <label for="inputSoundEmoji">Sound emoji</label>
-                <input type="text" class="form-control" id="inputSoundEmoji">
-              </div>
-            </form>
-            <button class="btn btn-primary" id="sound-picker">Select Sound</button>
-            <p id="sound-picker-name">File: none</p>
-            <div class="alert alert-warning" role="alert">
-              To save your custom sound list press the "Save sounds" button and drop the downloaded .json file in
-              './assets/data/' and add the sound file to './assets/sounds/'
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="save-new-sound">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
-
 </html>
