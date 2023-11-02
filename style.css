@@ -27,16 +27,8 @@
     margin: 5px !important;
 }
 
-#save-button {
-    margin:5px !important;
-}
-
-#upload-button {
-    margin:5px !important;
-}
-
-#random-button {
-    margin:5px !important;
+.custom-button {
+    margin: 5px !important;
 }
 
 #navbar-container{
