@@ -1,12 +1,12 @@
 [
-      {"name":"Airhorn", "emoji":"📯", "fp":"."},
-      {"name":"Drum", "emoji":"🥁", "fp":"."},
-      {"name":"Quack", "emoji":"🦆", "fp":"."},
-      {"name":"Clap", "emoji":"👏", "fp":"."},
-      {"name":"Cricket", "emoji": "🦗", "fp":"."},
-      {"name":"Fart", "emoji":"💨", "fp":"."},
-      {"name":"Thud", "emoji":"🗿", "fp":"."},
-      {"name":"Bruh", "emoji":"😐", "fp":"."},
-      {"name":"Amogus", "emoji":"📮", "fp":"."},
-      {"name":"Airhorn", "emoji":"🔊", "fp":"."}
+      {"name":"Airhorn", "emoji":"📯", "fn":"airhorn.mp3"},
+      {"name":"Drum", "emoji":"🥁", "fn":"."},
+      {"name":"Quack", "emoji":"🦆", "fn":"."},
+      {"name":"Clap", "emoji":"👏", "fn":"."},
+      {"name":"Cricket", "emoji": "🦗", "fn":"."},
+      {"name":"Fart", "emoji":"💨", "fn":"."},
+      {"name":"Thud", "emoji":"🗿", "fn":"."},
+      {"name":"Bruh", "emoji":"😐", "fn":"."},
+      {"name":"Amogus", "emoji":"📮", "fn":"."},
+      {"name":"Airhorn", "emoji":"🔊", "fn":"airhorn.mp3"}
 ]
