@@ -7,7 +7,7 @@ window.onload = () => {
     const soundBar = document.querySelector('#sound-bar');
     for (let i = 0; i < totalSounds; i++) {
         let btn = document.createElement('div');
-        btn.classList = 'btn btn-primary col-sm-3 col-md-3 col-lg-2 col-xl-2 col-4';
+        btn.classList = 'btn btn-primary col-sm-4 col-md-3 col-lg-2 col-xl-2 col-4';
         btn.id = 'sound-button';
         btn.setAttribute('type', 'button');
         
@@ -17,7 +17,7 @@ window.onload = () => {
         btn.appendChild(emoji);
         
         let text = document.createElement('div');
-        text.classList = 'text d-none d-sm-block';
+        text.classList = 'text d-none d-sm-none d-md-block';
         text.textContent = `${sounds[i].name}`;
         btn.appendChild(text);
         
