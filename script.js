@@ -17,7 +17,7 @@ window.onload = () => {
             reader.addEventListener('load', function (e) {
                 // audio.src = e.target.result;  //Might be useless: to be deleted later
                 // audio.play();
-                console.log("uploaded")
+                console.log('uploaded')
             });
             reader.readAsDataURL(file);
         }
@@ -30,7 +30,7 @@ window.onload = () => {
     const newSoundEmoji = document.getElementById('inputSoundEmoji');
     
     function download(content, fileName, contentType) {
-        var a = document.createElement("a");
+        var a = document.createElement('a');
         var file = new Blob([JSON.stringify(content, null, 2)], { type: contentType });
         a.href = URL.createObjectURL(file);
         a.download = fileName;
@@ -39,8 +39,8 @@ window.onload = () => {
     
     saveNewSoundBtn.addEventListener('click', () => {
         let newSound = {
-            "name": newSoundName.value,
-            "emoji": newSoundEmoji.value
+            'name': newSoundName.value,
+            'emoji': newSoundEmoji.value
         };
         sounds.push(newSound);
         let btn = document.createElement('div');
@@ -62,8 +62,9 @@ window.onload = () => {
     
     const saveSounds = document.getElementById('save-button')
     saveSounds.addEventListener('click', () => {
-        download(sounds, 'sounds.json', "application/json");
+        download(sounds, 'sounds.json', 'application/json');
     })
+    //#endregion
     
     //#region text matching logic
     const soundNameBoxRegex = RegExp('^[A-Za-z0-9-\ ]');
@@ -109,14 +110,44 @@ window.onload = () => {
             audio.play;
             
             changeBackground(sounds[i].name, sounds[i].emoji); // change canvas background on click
+            
+            // add emojis at bottom
+            const emojiContainer = document.getElementById('emojiContainer');
+            let maxEmojis = getRandomInt(10, 50);
+            for(let j = 0; j < maxEmojis; j++) {
+                let emojiElement = document.createElement('div');
+                
+                let emojiElement2 = document.createElement('div');
+                emojiElement2.textContent = sounds[i].emoji;
+                let randomRot = getRandomInt(0, 360);
+                emojiElement2.style.rotate = `${randomRot}deg`;
+                emojiElement.appendChild(emojiElement2);
+                
+                emojiElement.classList.add('emoji-bouncer');
+                
+                let randomX = window.innerWidth/maxEmojis * j;
+                emojiElement.style.left = `${randomX}px`;
+
+                let randomY = getRandomInt(200,500);
+                emojiElement.animate([
+                    { transform: 'translateY(100px)' },
+                    { transform: `translateY(${-randomY}px)`, opacity: 0 }
+                ], {
+                    duration: 1500,
+                    iterations: 1
+                }).addEventListener('finish', () => {
+                    emojiContainer.removeChild(emojiElement);
+                })
+                
+                emojiContainer.appendChild(emojiElement);
+            }
         })
-        
         soundBar.appendChild(btn);
     }
     
     //#region canvas logic
-    let c = document.getElementById("canvas");
-    let ctx = c.getContext("2d");
+    let c = document.getElementById('canvas');
+    let ctx = c.getContext('2d');
     let isCanvasVisible = false; // Track if the canvas is visible
     
     function changeBackground(soundName, soundEmoji) {
@@ -124,10 +155,10 @@ window.onload = () => {
         const randomColor = getRandomColor();
         ctx.fillStyle = randomColor;
         ctx.fillRect(0, 0, c.width, c.height);
-        ctx.font = "30px Arial";
-        ctx.fillStyle = "white";
-        ctx.textAlign = "center";
-        ctx.font = "30px Arial";
+        ctx.font = '30px Arial';
+        ctx.fillStyle = 'white';
+        ctx.textAlign = 'center';
+        ctx.font = '30px Arial';
         ctx.lineWidth = 3;
         let text = soundEmoji + soundName + '!!' + soundEmoji;
         ctx.strokeText(text, c.width / 2, c.height / 2);
@@ -141,11 +172,11 @@ window.onload = () => {
     function animateCanvasAppearance() {
         if (isCanvasVisible) {
             if(timeoutID !== null)
-                clearTimeout(timeoutID);
-
-            c.style.display = "block";
+            clearTimeout(timeoutID);
+            
+            c.style.display = 'block';
             timeoutID = setTimeout(() => {
-                c.style.display = "none";
+                c.style.display = 'none';
                 isCanvasVisible = false; 
             }, 3000); 
         }
