@@ -105,9 +105,11 @@ window.onload = () => {
         btn.appendChild(text);
         
         let audio = new Audio('./assets/sounds/' + sounds[i].fn);
+        btn.appendChild(audio);
         
         btn.addEventListener('click', () => {
-            audio.play;
+            audio.volume = getVolume();
+            audio.play();
             
             changeBackground(sounds[i].name, sounds[i].emoji); // change canvas background on click
             
@@ -259,7 +261,7 @@ window.onload = () => {
             } else if (newValue > 100) {
                 newValue = 100;
             }
-            
+
             slider.value = newValue;
         }
     });
@@ -267,5 +269,9 @@ window.onload = () => {
     window.addEventListener('mouseup', () => {
         isDragging = false;
     });
+
+    function getVolume() {
+        return slider.value / 100;
+    }
     //#endregion
 }
