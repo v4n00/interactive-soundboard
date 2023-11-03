@@ -60,7 +60,7 @@
         font-size: 50px !important;
     }
     .text {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
@@ -151,6 +151,7 @@
 }
 
 #emojiContainer {
+    pointer-events:none;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -159,6 +160,7 @@
 }
 
 .emoji-bouncer {
+    user-select: none;
     position: absolute;
     bottom: 0;
     font-size: 50px;

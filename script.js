@@ -9,7 +9,22 @@ window.onload = () => {
         {"name":"Fart", "emoji":"💨", "fn":"fart.mp3"},
         {"name":"Thud", "emoji":"🗿", "fn":"thud.mp3"},
         {"name":"Bruh", "emoji":"😐", "fn":"bruh.mp3"},
-        {"name":"Amogus", "emoji":"📮", "fn":"amogus.mp3"}
+        {"name":"Amogus", "emoji":"📮", "fn":"amogus.mp3"},
+        {"name":"Laugh", "emoji":"🤣", "fn":"laugh.mp3"},
+        {"name":"Metal Pipe", "emoji":"🤘", "fn":"metal-pipe.mp3"},
+        {"name":"Wut da hell", "emoji":"🤯", "fn":"wut-da-hell.mp3"},
+        {"name":"Siren Prowler", "emoji":"❗", "fn":"prowler.mp3"},
+        {"name":"Nuclear Bomb", "emoji":"☢️", "fn":"legalize-nuclear.mp3"},
+        {"name":"Oh My God", "emoji":"😨", "fn":"oh-my-god.mp3"},
+        {"name":"Villager", "emoji":"👨", "fn":"villager.mp3"},
+        {"name":"Goofy Ahh Run", "emoji":"🏃‍♂️", "fn":"goofy-ahh-run.mp3"},
+        {"name":"Alarm", "emoji":"⏰", "fn":"alarm.mp3"},
+        {"name":"Ah hell naw", "emoji":"😒", "fn":"ah-hell-naw.mp3"},
+        {"name":"Wow", "emoji":"😲", "fn":"wow.mp3"},
+        {"name":"Pan", "emoji":"🍳", "fn":"pan.mp3"},
+        {"name":"PvZ", "emoji":"🧟", "fn":"pvz.mp3"},
+        {"name":"Bonk", "emoji":"🔨", "fn":"bonk.mp3"},
+        {"name":"Huh", "emoji":"⁉️", "fn":"huh.mp3"},
   ]
   
 
@@ -97,9 +112,9 @@ window.onload = () => {
         ctx.textAlign = 'center';
         ctx.font = '30px Arial';
         ctx.lineWidth = 3;
-        let text = soundEmoji + soundName + '!!' + soundEmoji;
-        ctx.strokeText(text, c.width / 2, c.height / 2);
-        ctx.fillText(text, c.width / 2, c.height / 2);
+        let text = soundEmoji + '!! ' + soundName + ' !!' + soundEmoji;
+        ctx.strokeText(text, c.width / 2, c.height / 2 + 10);
+        ctx.fillText(text, c.width / 2, c.height / 2 + 10);
         ctx.stroke();
         isCanvasVisible = true;
         animateCanvasAppearance();
