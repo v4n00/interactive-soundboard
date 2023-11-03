@@ -24,10 +24,10 @@
 <body class="light-theme">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg light-theme" id="navbar">
-    <div class="container-fluid" id="navbar-container">
+    <div class="container-fluid py-lg-0 py-4" id="navbar-container">
       <!-- Logo -->
       <a class="navbar-brand">
-        <img src="logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+        <img src="logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
         Vibe
       </a>
       
@@ -35,6 +35,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+      
     </button>
     
     
@@ -45,15 +46,16 @@
         <button class="btn btn-primary custom-button" id="random-button">Random</button>
         <button class="btn btn-secondary custom-button" id="theme-button">Change Theme</button>
       </ul>
-    </div>
-    
-    <!-- Volume mixer-->
+      <!-- Volume mixer-->
     <div class="mixer">
       <div class="channel">
         <div class="label">Volume</div>
         <input type="range" min="0" max="100" value="50" id="slider">
       </div>
     </div>
+    </div>
+    
+    
     
     
   </div>
@@ -65,7 +67,7 @@
   </div>
 </div>
 
-<canvas id="canvas"></canvas>
+<canvas id="canvas", height="100"></canvas>
 <div id="emojiContainer"></div>
 
 </body>

@@ -3,11 +3,18 @@
     justify-content: center;
     align-items: center;
     gap:10px;
-    font-size: 40px;
+    font-size: 30px !important; 
     font-weight: bold;
 }
 
+.navbar {
+    padding:0px !important;
+}
+
 @media screen and (max-width: 992px) {
+    .navbar-brand {
+        font-size: 50px !important;
+    }
     #sound-button {
         height: 100px !important;
     }
@@ -16,8 +23,10 @@
     }
 }
 
-.navbar {
-    background-color: black;
+@media screen and (max-width: 1200px) {
+    #sound-button {
+        height:70px !important;
+    }
 }
 
 #sound-picker {
@@ -42,8 +51,6 @@
 
 #navbar-container{
     background-color: #CCF;
-    border-radius: 10px;
-    margin:10px;
 }
 
 #sound-button {
@@ -74,10 +81,10 @@
 #canvas {
     position: absolute;
     border-radius: 20px;
-    top: 50%;
+    bottom:0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 2;
 }
 
 .mixer {

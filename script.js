@@ -39,6 +39,9 @@ window.onload = () => {
             audio.volume = getVolume();
             audio.play();
             
+            if(timeoutID !== null) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
             changeBackground(sounds[i].name, sounds[i].emoji); // change canvas background on click
             
             // add emojis at bottom
@@ -50,7 +53,7 @@ window.onload = () => {
                 let emojiElement2 = document.createElement('div');
                 emojiElement2.textContent = sounds[i].emoji;
                 let randomRot = getRandomInt(0, 360);
-                emojiElement2.style.rotate = `${randomRot}deg`;
+                emojiElement2.style.rotate = `${randomRot}deg`;                
                 emojiElement.appendChild(emojiElement2);
                 
                 emojiElement.classList.add('emoji-bouncer');
@@ -61,10 +64,11 @@ window.onload = () => {
                 let randomY = getRandomInt(200,500);
                 emojiElement.animate([
                     { transform: 'translateY(100px)' },
-                    { transform: `translateY(${-randomY}px)`, opacity: 0 }
+                    { transform: `translateY(${-randomY}px)`, 
+                    opacity: 0}
                 ], {
-                    duration: 1500,
-                    iterations: 1
+                    duration: 1000,
+                    iterations: 1,
                 }).addEventListener('finish', () => {
                     emojiContainer.removeChild(emojiElement);
                 })
@@ -84,7 +88,9 @@ window.onload = () => {
         ctx.beginPath();
         const randomColor = getRandomColor();
         ctx.fillStyle = randomColor;
+        ctx.globalAlpha = 0.5;
         ctx.fillRect(0, 0, c.width, c.height);
+        ctx.globalAlpha = 1;
         ctx.font = '30px Arial';
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
@@ -102,13 +108,13 @@ window.onload = () => {
     function animateCanvasAppearance() {
         if (isCanvasVisible) {
             if(timeoutID !== null)
-            clearTimeout(timeoutID);
+                clearTimeout(timeoutID);
             
             c.style.display = 'block';
             timeoutID = setTimeout(() => {
                 c.style.display = 'none';
                 isCanvasVisible = false; 
-            }, 3000); 
+            }, 1500); 
         }
     }
     
