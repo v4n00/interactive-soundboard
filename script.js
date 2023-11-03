@@ -35,6 +35,7 @@ window.onload = () => {
         {"name":"PvZ", "emoji":"🧟", "fn":"pvz.mp3"},
         {"name":"Bonk", "emoji":"🔨", "fn":"bonk.mp3"},
         {"name":"Huh", "emoji":"❓", "fn":"huh.mp3"},
+        {"name":"He He He Ha", "emoji":"😁", "fn":"heheheha.mp3"},
     ]
     
     
@@ -174,7 +175,6 @@ window.onload = () => {
         listItems.forEach((item) => {
             let text = item.querySelector('.text').textContent;
             if (text.toLowerCase().includes(filter)) {
-                console.log(item);
                 item.style.display = '';
             }
             else
@@ -242,11 +242,17 @@ window.onload = () => {
             slider.value = newValue;
         }
     });
+
+    slider.addEventListener('mouseup', () => {
+        localStorage.setItem('volume', getVolume());
+    })
     
     window.addEventListener('mouseup', () => {
         isDragging = false;
     });
-    
+
+    slider.value = localStorage.getItem('volume') * 100;
+
     function getVolume() {
         return slider.value / 100;
     }
