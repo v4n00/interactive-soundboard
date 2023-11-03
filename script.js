@@ -7,7 +7,7 @@ window.onload = () => {
     const soundBar = document.querySelector('#sound-bar');
     for (let i = 0; i < totalSounds; i++) {
         let btn = document.createElement('div');
-        btn.classList = 'btn btn-primary col-sm-4 col-md-3 col-lg-2 col-xl-2 col-4';
+        btn.classList = 'btn btn-primary col-sm-4 col-md-5 col-lg-3 col-xl-2 col-4';
         btn.id = 'sound-button';
         btn.setAttribute('type', 'button');
         

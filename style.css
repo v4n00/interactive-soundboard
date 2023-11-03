@@ -7,6 +7,15 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 992px) {
+    #sound-button {
+        height: 100px !important;
+    }
+    .text {
+        font-size: 40px;
+    }
+}
+
 .navbar {
     background-color: black;
 }
