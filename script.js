@@ -24,7 +24,6 @@ window.onload = () => {
         {"name":"Metal Pipe", "emoji":"🤘", "fn":"metal-pipe.mp3"},
         {"name":"Wut da hell", "emoji":"🤯", "fn":"wut-da-hell.mp3"},
         {"name":"Siren Prowler", "emoji":"❗", "fn":"prowler.mp3"},
-        {"name":"Nuclear Bomb", "emoji":"☢️", "fn":"legalize-nuclear.mp3"},
         {"name":"Oh My God", "emoji":"😨", "fn":"oh-my-god.mp3"},
         {"name":"Villager", "emoji":"👨", "fn":"villager.mp3"},
         {"name":"Goofy Ahh Run", "emoji":"🏃‍♂️", "fn":"goofy-ahh-run.mp3"},
