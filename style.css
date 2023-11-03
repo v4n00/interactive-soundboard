@@ -1,3 +1,7 @@
+body {
+    touch-action: manipulation;
+}
+
 .navbar-brand {
     display: flex;
     justify-content: center;
