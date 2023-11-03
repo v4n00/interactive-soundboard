@@ -187,7 +187,7 @@ window.onload = () => {
     let darkTheme = false;
     themeBtn.addEventListener('click', e => {
         if (!darkTheme) {
-            sessionStorage.setItem('isDarkMode', true);
+            localStorage.setItem('isDarkMode', true);
             document.body.classList = 'dark-theme';
             navbar.style.backgroundColor = 'rgb(46, 46, 67)';
             volumeLabel.style.color = 'white';
@@ -196,7 +196,7 @@ window.onload = () => {
             navbarToggler.style.border = '1px solid white';
         }
         else {
-            sessionStorage.setItem('isDarkMode', false);
+            localStorage.setItem('isDarkMode', false);
             document.body.classList = 'light-theme';
             navbar.style.backgroundColor = '#CCF';
             volumeLabel.style.color = 'black';
@@ -206,7 +206,7 @@ window.onload = () => {
         }
     });
 
-    let isDarkMode = sessionStorage.getItem('isDarkMode');
+    let isDarkMode = localStorage.getItem('isDarkMode');
     if(isDarkMode === 'true')
         themeBtn.click();
     //#endregion
