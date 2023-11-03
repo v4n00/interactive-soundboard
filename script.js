@@ -24,7 +24,7 @@ window.onload = () => {
         {"name":"Pan", "emoji":"🍳", "fn":"pan.mp3"},
         {"name":"PvZ", "emoji":"🧟", "fn":"pvz.mp3"},
         {"name":"Bonk", "emoji":"🔨", "fn":"bonk.mp3"},
-        {"name":"Huh", "emoji":"⁉️", "fn":"huh.mp3"},
+        {"name":"Huh", "emoji":"❓", "fn":"huh.mp3"},
   ]
   
 
