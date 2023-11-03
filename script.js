@@ -1,7 +1,18 @@
-import sounds from './assets/data/sounds.json' assert { type: 'json' };
-
 window.onload = () => {
-    
+    let sounds =
+    [
+        {"name":"Airhorn", "emoji":"📯", "fn":"airhorn.mp3"},
+        {"name":"Ba dum tss", "emoji":"🥁", "fn":"ba-dum-tss.mp3"},
+        {"name":"Quack", "emoji":"🦆", "fn":"quack.mp3"},
+        {"name":"Clap", "emoji":"👏", "fn":"clap.mp3"},
+        {"name":"Cricket", "emoji": "🦗", "fn":"cricket.mp3"},
+        {"name":"Fart", "emoji":"💨", "fn":"fart.mp3"},
+        {"name":"Thud", "emoji":"🗿", "fn":"thud.mp3"},
+        {"name":"Bruh", "emoji":"😐", "fn":"bruh.mp3"},
+        {"name":"Amogus", "emoji":"📮", "fn":"amogus.mp3"}
+  ]
+  
+
     //#region generate buttons
     let totalSounds = sounds.length;
     const soundBar = document.querySelector('#sound-bar');
@@ -21,7 +32,7 @@ window.onload = () => {
         text.textContent = `${sounds[i].name}`;
         btn.appendChild(text);
         
-        let audio = new Audio('./assets/sounds/' + sounds[i].fn);
+        let audio = new Audio('./sounds/' + sounds[i].fn);
         btn.appendChild(audio);
         
         btn.addEventListener('click', () => {
