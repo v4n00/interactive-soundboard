@@ -1,8 +1,14 @@
-import 'https://tomashubelbauer.github.io/github-pages-local-storage/index.js';
-
 window.onload = () => {
+    // Source: https://github.com/TomasHubelbauer/github-pages-local-storage/blob/main/index.js
+    const setItem = localStorage.setItem;
+    localStorage.constructor.prototype.setItem = (key, value) => setItem.apply(localStorage, [location.pathname + ':' + key, value])
     
-
+    const getItem = localStorage.getItem;
+    localStorage.constructor.prototype.getItem = (key) => getItem.apply(localStorage, [location.pathname + ':' + key]);
+    
+    const removeItem = localStorage.removeItem;
+    localStorage.constructor.prototype.removeItem = (key) => removeItem.apply(localStorage, [location.pathname + ':' + key]);
+    
     let sounds =
     [
         {"name":"Airhorn", "emoji":"📯", "fn":"airhorn.mp3"},
@@ -29,9 +35,9 @@ window.onload = () => {
         {"name":"PvZ", "emoji":"🧟", "fn":"pvz.mp3"},
         {"name":"Bonk", "emoji":"🔨", "fn":"bonk.mp3"},
         {"name":"Huh", "emoji":"❓", "fn":"huh.mp3"},
-  ]
-  
-
+    ]
+    
+    
     //#region generate buttons
     let totalSounds = sounds.length;
     const soundBar = document.querySelector('#sound-bar');
@@ -80,7 +86,7 @@ window.onload = () => {
                 
                 let randomX = window.innerWidth/maxEmojis * j;
                 emojiElement.style.left = `${randomX}px`;
-
+                
                 let randomY = getRandomInt(200,500);
                 emojiElement.animate([
                     { transform: 'translateY(100px)' },
@@ -128,7 +134,7 @@ window.onload = () => {
     function animateCanvasAppearance() {
         if (isCanvasVisible) {
             if(timeoutID !== null)
-                clearTimeout(timeoutID);
+            clearTimeout(timeoutID);
             
             c.style.display = 'block';
             timeoutID = setTimeout(() => {
@@ -172,7 +178,7 @@ window.onload = () => {
                 item.style.display = '';
             }
             else
-                item.style.display = 'none';
+            item.style.display = 'none';
         })
     });
     //#endregion
@@ -183,7 +189,7 @@ window.onload = () => {
     const volumeLabel = document.getElementById('volume-label')
     const vibeLabel = document.getElementById('vibe-label');
     const navbarToggler = document.getElementById('navbar-toggler');
-
+    
     let darkTheme = false;
     themeBtn.addEventListener('click', e => {
         if (!darkTheme) {
@@ -205,10 +211,10 @@ window.onload = () => {
             navbarToggler.style.border = '1px solid black';
         }
     });
-
+    
     let isDarkMode = localStorage.getItem('isDarkMode');
     if(isDarkMode === 'true')
-        themeBtn.click();
+    themeBtn.click();
     //#endregion
     
     //#region volume slider
@@ -232,7 +238,7 @@ window.onload = () => {
             } else if (newValue > 100) {
                 newValue = 100;
             }
-
+            
             slider.value = newValue;
         }
     });
@@ -240,7 +246,7 @@ window.onload = () => {
     window.addEventListener('mouseup', () => {
         isDragging = false;
     });
-
+    
     function getVolume() {
         return slider.value / 100;
     }
