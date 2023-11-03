@@ -37,6 +37,7 @@ window.onload = () => {
         
         btn.addEventListener('click', () => {
             audio.volume = getVolume();
+            audio.currentTime = 0;
             audio.play();
             
             if(timeoutID !== null) {
@@ -159,18 +160,24 @@ window.onload = () => {
     
     //#region theme button
     const themeBtn = document.getElementById('theme-button');
-    const navbar = document.getElementById('navbar');
-    
+    const navbar = document.getElementById('navbar-container');
+    const volumeLabel = document.getElementById('volume-label')
+    const vibeLabel = document.getElementById('vibe-label');
+
     let darkTheme = false;
     themeBtn.addEventListener('click', e => {
         if (!darkTheme) {
             document.body.classList = 'dark-theme';
-            navbar.classList = 'navbar navbar-expand-lg dark-theme';
+            navbar.style.backgroundColor = 'rgb(46, 46, 67)';
+            volumeLabel.style.color = 'white';
+            vibeLabel.style.color = 'white';
             darkTheme = !darkTheme;
         }
         else {
             document.body.classList = 'light-theme';
-            navbar.classList = 'navbar navbar-expand-lg light-theme';
+            navbar.style.backgroundColor = '#CCF';
+            volumeLabel.style.color = 'black';
+            vibeLabel.style.color = 'black';
             darkTheme = !darkTheme;
         }
     });
