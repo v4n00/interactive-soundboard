@@ -1,4 +1,6 @@
 window.onload = () => {
+    
+
     let sounds =
     [
         {"name":"Airhorn", "emoji":"📯", "fn":"airhorn.mp3"},
@@ -183,6 +185,7 @@ window.onload = () => {
     let darkTheme = false;
     themeBtn.addEventListener('click', e => {
         if (!darkTheme) {
+            localStorage.setItem('isDarkMode', true);
             document.body.classList = 'dark-theme';
             navbar.style.backgroundColor = 'rgb(46, 46, 67)';
             volumeLabel.style.color = 'white';
@@ -191,6 +194,7 @@ window.onload = () => {
             navbarToggler.style.border = '1px solid white';
         }
         else {
+            localStorage.setItem('isDarkMode', false);
             document.body.classList = 'light-theme';
             navbar.style.backgroundColor = '#CCF';
             volumeLabel.style.color = 'black';
@@ -199,6 +203,10 @@ window.onload = () => {
             navbarToggler.style.border = '1px solid black';
         }
     });
+
+    let isDarkMode = localStorage.getItem('isDarkMode');
+    if(isDarkMode === 'true')
+        themeBtn.click();
     //#endregion
     
     //#region volume slider
