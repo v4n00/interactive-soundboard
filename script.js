@@ -163,6 +163,7 @@ window.onload = () => {
     const navbar = document.getElementById('navbar-container');
     const volumeLabel = document.getElementById('volume-label')
     const vibeLabel = document.getElementById('vibe-label');
+    const navbarToggler = document.getElementById('navbar-toggler');
 
     let darkTheme = false;
     themeBtn.addEventListener('click', e => {
@@ -172,6 +173,7 @@ window.onload = () => {
             volumeLabel.style.color = 'white';
             vibeLabel.style.color = 'white';
             darkTheme = !darkTheme;
+            navbarToggler.style.border = '1px solid white';
         }
         else {
             document.body.classList = 'light-theme';
@@ -179,6 +181,7 @@ window.onload = () => {
             volumeLabel.style.color = 'black';
             vibeLabel.style.color = 'black';
             darkTheme = !darkTheme;
+            navbarToggler.style.border = '1px solid black';
         }
     });
     //#endregion
