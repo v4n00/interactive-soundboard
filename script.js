@@ -181,6 +181,23 @@ window.onload = () => {
         })
     });
     //#endregion
+
+    //#region chaos button
+    const chaosBtn = document.getElementById('chaos-button');
+    let chaosMode = false;
+    let interval = null;
+    chaosBtn.addEventListener('click', () => {
+        if(chaosMode == false) {
+            interval = setInterval(()=>{document.getElementById('random-button').click();},100);
+            chaosMode = true;
+        }
+        else {
+            clearInterval(interval);
+            chaosMode = false;
+        }
+    })
+
+    //#endregion
     
     //#region theme button
     const themeBtn = document.getElementById('theme-button');

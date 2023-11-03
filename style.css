@@ -20,6 +20,7 @@ body {
     appearance: none;
     width: 100%; 
     height: 20px;
+    border-radius: 10px;
 }
 
 #slider::-webkit-slider-thumb {
@@ -29,9 +30,17 @@ body {
     height: 30px;
     background: #0d6efd;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.img-fluid {
+    max-width: 25% !important;
 }
 
 @media screen and (max-width: 992px) {
+    .img-fluid {
+        max-width: 100% !important;
+    }
     .navbar-toggler-icon {
         scale: 200%;
     }
@@ -67,12 +76,6 @@ body {
         font-size: 30px;
     }
 }
-
-/* @media screen and (max-width: 1200px) {
-    #sound-button {
-        height:70px !important;
-    }
-} */
 
 #sound-picker {
     margin-top: 10px;
