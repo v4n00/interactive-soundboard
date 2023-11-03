@@ -251,7 +251,10 @@ window.onload = () => {
         isDragging = false;
     });
 
-    slider.value = localStorage.getItem('volume') * 100;
+    if(localStorage.getItem('volume') == null)
+        slider.value = 50;
+    else
+        slider.value = localStorage.getItem('volume') * 100;
 
     function getVolume() {
         return slider.value / 100;
