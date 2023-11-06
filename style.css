@@ -127,7 +127,7 @@ body {
 }
 
 #canvas {
-    position: absolute;
+    position: fixed;
     border-radius: 20px;
     bottom:0%;
     left: 50%;

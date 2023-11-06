@@ -25,7 +25,9 @@ window.onload = () => {
         {"name":"Wut da hell", "emoji":"🤯", "fn":"wut-da-hell.mp3"},
         {"name":"Siren Prowler", "emoji":"❗", "fn":"prowler.mp3"},
         {"name":"Oh My God", "emoji":"😨", "fn":"oh-my-god.mp3"},
-        {"name":"Villager", "emoji":"👨", "fn":"villager.mp3"},
+        {"name":"Villager 1", "emoji":"👨", "fn":"villager-1.mp3"},
+        {"name":"Villager 2", "emoji":"👨", "fn":"villager-2.mp3"},
+        {"name":"Villager 3", "emoji":"👨", "fn":"villager-3.mp3"},
         {"name":"Goofy Ahh Run", "emoji":"🏃‍♂️", "fn":"goofy-ahh-run.mp3"},
         {"name":"Alarm", "emoji":"⏰", "fn":"alarm.mp3"},
         {"name":"Ah hell naw", "emoji":"😒", "fn":"ah-hell-naw.mp3"},
@@ -35,6 +37,8 @@ window.onload = () => {
         {"name":"Bonk", "emoji":"🔨", "fn":"bonk.mp3"},
         {"name":"Huh", "emoji":"❓", "fn":"huh.mp3"},
         {"name":"He He He Ha", "emoji":"😁", "fn":"heheheha.mp3"},
+        {"name":"Baby laugh", "emoji":"👶", "fn":"baby-laugh.mp3"},
+        {"name":"FNAF ambience", "emoji":"🐻", "fn":"fnaf-ambience.mp3"},
     ]
     
     
